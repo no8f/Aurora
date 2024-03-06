@@ -36,6 +36,21 @@
 <p align="left">- FiraCode Nerd Font<br>- Better Discord<br>- Amixer<br>- Brightnessctl<br>- bc<br>- ZSH Shell<br>- Oh My ZSH Plugin</p>
 
 ###
+
+<h2 align="left">Installation</h2>
+
+###
+
+<p align="left">Working on Automated installation... Currently you can just copy the folders :)</p>
+
+###
+
+<h2 align="left">Config Files</h2>
+
+###
+
+<p align="left">The dotfiles are a mess :D.<br>The code makes no sense and is poorly documented.<br> Also everything is solved in a rather cumbersome way so expect some things to change at some point.<br> Don't expect too much, I don't have much time.<br>Ah and some things don't work.</p>
+
 ## Showcase Section
 -
 	![](.config/assets/1.png)
