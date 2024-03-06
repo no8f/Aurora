@@ -1,0 +1,330 @@
+@define-color primary-color #5D778A;
+
+* { all: unset;    font-family: "Font Awesome 6 Pro"; }
+
+.eww_bar {
+  font-size: 20px;
+  background-color: #0F0F11;
+  border: solid 1px @primary-color;
+  border-radius: 7px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #0F0F11;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.workspace {
+  background-color: #1d1f25;
+  min-height: 22px;
+  border-radius: 30px;
+}
+
+.workspace:hover {
+  background-color: #2a2d37;
+  border-radius: 30px;
+}
+
+.workspace.current {
+  background-color: #94E2D5;
+  border-radius: 30px;
+}
+
+.cal-inner-box {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  background-color: #0F0F11;
+  border-radius: 7px;
+  border: solid 2px @primary-color;
+}
+
+.cal-inner-box * {
+  font-size: 15px;
+  padding: 5px;
+}
+
+scale trough {
+  all: unset;
+  background-color: #2a2d37;
+  border-radius: 5px;
+  min-height: 80px;
+  min-width: 10px;
+  margin: .3rem 0 .3rem 0;
+}
+
+.volbar trough highlight {
+  background-color: #94E2D5;
+  border-radius: 5px;
+}
+
+.bribar trough highlight {
+  background-color: #F9E2AF;
+  border-radius: 5px;
+}
+
+.power-btns-box {
+  font-size: 20px;
+  background-color: #0F0F11;
+  border-radius: 7px;
+  border: solid 2px @primary-color;
+  padding: 5px;
+}
+
+.wifi-icon,
+.powerbutton,
+.time-number,
+.menu-btn {
+  transition: border-color 0.6s cubic-bezier(0.1, 0.0, 0, 1.0);
+}
+
+.sysbtn,
+.connect-btn,
+.back-btn,
+.reboot-btn,
+.shutdown-btn,
+.logout-btn {
+  transition: color 0.6s cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+.powerbutton:hover {
+  border-color: #F38BA8;
+}
+
+.menu-btn {
+  border: solid 1px transparent;
+}
+
+.time-number {
+  padding-top: 5px;
+  border: solid 1px transparent;
+}
+
+.time-number:hover {
+  border-color: #ffffff;
+}
+
+.back-btn:hover {
+  color: #89B4FA;
+}
+.logout-btn:hover {
+  color: #89B4FA;
+}
+.reboot-btn:hover {
+  color: #CBA6F7;
+}
+.shutdown-btn:hover {
+  color: #F38BA8;
+}
+
+.menu-btn:hover {
+  border-color: #ffffff;
+}
+
+.wifi-icon:hover {
+  border-color: #CBA6F7;
+}
+
+
+.bat_icon {
+  color: #89B4FA;
+}
+
+.powerbutton {
+  color: #F38BA8;
+  border: solid 1px transparent;
+}
+
+.brightness-icon {
+  color: #F9E2AF
+}
+
+.volume-icon {
+  color: #94E2D5;
+}
+
+.wifi-icon {
+  color: #CBA6F7;
+  border: solid 1px transparent;
+}
+
+.netwidget {
+  font-size: 19px;
+  background-color: #0F0F11;
+  padding: 15px;
+  border-radius: 7px;
+  border: solid 2px @primary-color;
+}
+
+.connect-btn {
+  padding-top: 5px;
+}
+
+.connect-btn:hover {
+  color: @primary-color;
+}
+
+.connection-array {
+  padding-left: 15px;
+}
+
+.cal:selected {
+    color: #F38BA8;
+}
+
+tooltip.background {
+    background-color: #0f0f17;
+    font-size: 18;
+    border-radius: 10px;
+    color: #ffffff;
+    border: solid 2px @primary-color;
+}
+
+tooltip label {
+    margin: 6px;
+}
+
+.quickmenu {
+  background-color: transparent;
+}
+
+._sysctlbtnvert {
+  
+}
+
+._sysctlbtnhori {
+
+}
+
+.sysbtn {
+  min-height: 50px;
+  min-width: 80px;
+  background-color: #0F0F11;
+  border: solid 3px transparent;
+  border-radius: 7px;
+  margin: 5px;
+  font-size: 30px;
+}
+
+.sysbtn:hover {
+  color: @primary-color;
+}
+
+.sysbtn:active {
+  color: #cee0fd;
+}
+
+.profilepick {
+  min-height: 80px;
+  min-width: 80px;
+  background-image: url('/home/nof/Bilder/profilepick.jpg');
+  border-radius: 5px;
+}
+
+.greeter {
+  margin: 0px;
+  min-height: 80px;
+  border: solid 2px @primary-color;
+  border-radius: 7px;
+  background-color: #0F0F11;
+}
+
+.greeterclock {
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+._sysctlbtnvert {
+  margin-top: 10px;
+  border: solid 2px @primary-color;
+  border-radius: 7px;
+ background-color: #0F0F11;
+}
+.uptime {
+
+}
+
+.systeminfowrapper {
+  margin-top: 10px;
+  background-color: #0F0F11;
+  min-height: 40px;
+  border: solid 2px @primary-color;
+  border-radius: 7px;
+}
+
+.rambar {
+  padding: 10px;
+  margin-bottom: 4px;
+}
+
+.rambar > trough {
+  min-height: 12px;
+  background-color: #230646;
+  border-radius: 7px;
+}
+
+.rambar > trough > progress {
+  background: #CBA6F7;
+  border-radius: 7px;
+  min-height: 12px;
+}
+
+.baricon {
+  padding: 10px;
+}
+
+.batbar {
+  padding: 10px;
+  margin-bottom: 4px;
+}
+
+.batbar > trough {
+  min-height: 12px;
+  background-color: #031E49;
+  border-radius: 7px;
+}
+
+.batbar > trough > progress {
+  background: #89B4FA;
+  border-radius: 7px;
+  min-height: 12px;
+}
+
+.cpubar {
+  padding: 10px;
+  margin-bottom: 4px;
+}
+
+.cpubar > trough {
+  min-height: 12px;
+  background-color: #450719;
+  border-radius: 7px;
+}
+
+.cpubar > trough > progress {
+  background: #F38BA8;
+  border-radius: 7px;
+  min-height: 12px;
+}
+
+.diskbar {
+  padding: 10px;
+  margin-bottom: 4px;
+}
+
+.diskbar > trough {
+  min-height: 12px;
+  background-color: #103c35;
+  border-radius: 7px;
+}
+
+.diskbar > trough > progress {
+  background: #94E2D5;
+  border-radius: 7px;
+  min-height: 12px;
+}
+

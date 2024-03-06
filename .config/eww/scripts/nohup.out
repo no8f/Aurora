@@ -1,0 +1,150 @@
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:25.419: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.130: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.137: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.151: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.211: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.313: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.414: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.496: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.515: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.541: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.582: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:27.600: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:33.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:20:39.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:04.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:05.751: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:05.751: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:05.836: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:05.937: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:05.986: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:06.004: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:06.037: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:06.038: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:06.054: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:21:23.402: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:53.910: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:53.917: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:53.934: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:53.997: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:54.098: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:54.181: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:54.211: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:54.226: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:54.300: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:22:54.330: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:24:51.402: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.035: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.055: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.073: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.121: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.221: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.322: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.331: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.353: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.384: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:25:33.437: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:27:47.402: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.395: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.400: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.412: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.485: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.586: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.651: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.675: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.686: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.698: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.737: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:32:39.751: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:33:18.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.681: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.684: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.696: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.772: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.873: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.922: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:20.970: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:34:21.019: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:47:39.402: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:47:45.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:48:03.401: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:48:09.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:51:51.402: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:52:09.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:52:33.404: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(nm-applet:324571): Gtk-CRITICAL **: 16:52:39.403: gtk_widget_get_scale_factor: assertion 'GTK_IS_WIDGET (widget)' failed

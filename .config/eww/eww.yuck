@@ -1,0 +1,371 @@
+(defvar eww "$HOME/clones/eww/target/release/eww -c $HOME/.config/eww/")
+
+;; BAttery Widget ;;
+(defwidget _battery [battery status] ;; The Used Battery is defined Below in the Window ;;
+(box :class "bat-box" :space-evenly false :spacing 3 :tooltip "${battery} %" :orientation "v"
+  (label :class "bat_icon" :text {
+      battery < 10 ? "󰂎" :
+      battery < 20 ? "󰁺" :
+      battery < 30 ? "󰁻" :
+      battery < 40 ? "󰁼" :
+      battery < 50 ? "󰁽" :
+      battery < 60 ? "󰁾" :
+      battery < 70 ? "󰁿" :
+      battery < 80 ? "󰂀" :
+      battery < 90 ? "󰂁" :
+      battery < 95 ? "󰂂" : "󰁹"})
+  (label :class "bat_chargin_icon" :text "󱐋" :visible {status == "Charging" ? true : false})
+  )
+)
+
+;; Brightness Widgets ;;
+(defwidget bright []
+(eventbox :onhover "${eww} update bright=true"
+    :onhoverlost "${eww} update bright=false"
+  (box :orientation "v"
+      :space-evenly "false"
+      :spacing 2
+    (revealer :transition "slideup"
+        :reveal bright
+        :duration "550ms"
+      (scale :class "bribar"
+          :value current-brightness
+          :tooltip "Brightness: ${current-brightness}%"
+          :onchange "brightnessctl set {}"
+          :orientation "v"
+          :flipped true
+          :max 150
+          :min 0))
+    (label :class "brightness-icon" :text {
+        current-brightness > 140? "" :
+        current-brightness > 130? "" :
+        current-brightness > 120? "" :
+        current-brightness > 110? "" :
+        current-brightness > 100 ? "" :
+        current-brightness > 90 ? "" :
+        current-brightness > 80 ? "" :
+        current-brightness > 60 ? "" :
+        current-brightness > 50 ? "" :
+        current-brightness > 40 ? "" :
+        current-brightness > 30 ? "" :
+        current-brightness > 20 ? "" :
+        current-brightness > 10 ? "" : ""}
+        :xalign 0.45))))
+(defpoll current-brightness :interval "1s" "brightnessctl g")
+(defvar bright false)
+
+
+;; Volume Widgets ;;
+(defwidget volum []
+(eventbox :onhover "${eww} update volum=true"
+    :onhoverlost "${eww} update volum=false"
+  (box      :orientation "v"
+      :space-evenly "false"
+      :spacing "2"
+    (revealer :transition "slideup"
+        :reveal volum
+        :duration "550ms"
+      (scale    :class "volbar"
+          :value current-volume
+          :orientation "v"
+          :flipped true
+          :tooltip "Volume: ${current-volume}%"
+          :max 101
+          :min 0
+          :onchange "amixer -D pulse sset Master {}%" ))
+    (button   :onclick "scripts/popup audio"   :class "volume-icon"
+      {current-volume > 70 ? "󰕾" :
+          current-volume > 30 ? "󰖀" :
+          current-volume > 10 ? "󰕿" : "󰸈"}))))
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar volum false)
+
+;; Spacer Widget ;;
+(defwidget spacer [] (label :justify "center" :class "spacer" :text "—"))
+
+;; PowerMenu Button ;;
+(defwidget powermenu [] (button :class "powerbutton" :onclick "$(scripts/popup.sh power)" (label :xalign 0.3 :justify "center" :text "⏻")))
+
+;; Workspaces ;;
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces.sh")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+(defwidget workspaces []
+(eventbox :orientation "v" :onscroll "bash ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}" :class "workspaces-widget"
+  (box :space-evenly true :orientation "v" :spacing 2
+    (label :text "${workspaces}${current_workspace}" :visible false)
+    (for workspace in workspaces
+      (button :onclick "hyprctl dispatch workspace ${workspace.id}"
+          :class "workspace ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+        )
+      )
+    )
+  )
+)
+
+;; Clock Widgets ;;
+(defwidget time []
+(box  :orientation "v"
+    :class "time"
+    :valign "end"
+  (button :onclick "$(scripts/popup.sh calendar)"  :class "time-number" (box :space-evenly false :orientation "v" hour  min))
+  )
+)
+(defpoll hour :interval "1s"  "date '+%H'")
+(defpoll min  :interval "1s"  "date '+%M'")
+
+;; Wifi indecator ;;
+(defwidget wifi []
+(box :orientation "v"
+  (button :onclick "$(scripts/popup.sh network)" :class "wifi-icon" :tooltip "${wifi-name} | ${ip-ad}" (label :text wifi-icon :xalign 0.2))))
+(defpoll wifi-icon :interval "1s" "scripts/wifi.sh icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi.sh name")
+(defpoll ip-ad :interval "10s" "scripts/wifi.sh ip")
+
+;; QuickMenu Button ;;
+(defwidget quickmbtn [] (button :class "menu-btn" :onclick "$(scripts/popup.sh quickmenu)" (label :xalign 0.3 :text "󰣇")))
+
+
+;; Top Widgets ;;
+(defwidget top []
+(box  :orientation "v"
+    :space-evenly "false"
+    :valign "start"
+  (quickmbtn)
+  (spacer)
+  (workspaces)))
+
+;; Bottom Widgets ;;
+(defwidget bottom []
+(box  :orientation "v"
+    :space-evenly false
+  (spacer)
+  (powermenu)))
+
+;; End Widgets ;;
+(defwidget end []
+(box :orientation "v"
+    :space-evenly "false"
+    :valign "end"
+    :spacing 0
+  (bright)
+  (volum)
+  (spacer)
+  (time)
+  (spacer)
+  (wifi)
+  (_battery :battery "${EWW_BATTERY.BAT0.capacity}" :status "${EWW_BATTERY.BAT0.status}")
+  (bottom)))
+
+;; Bar Widgets ;;
+(defwidget bar []
+(box :class "eww_bar"
+    :orientation "v"
+    :vexpand "false"
+    :hexpand "false"
+  (top)
+  (end)))
+
+;; The vertical Bar
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "10px"
+    :y "0%"
+    :width "35px"
+    :height "100%"
+    :anchor "left center")
+  :stacking "fg"
+  ;:reserve (struts :distance "40px" :side "top")
+  :exclusive true
+  :focusable false
+  :wm-ignore false
+(bar))
+
+
+;   _   _        _                           _        ______
+;  | \ | |      | |                         | |       | ___ \
+;  |  \| |  ___ | |_ __      __  ___   _ __ | | __    | |_/ /  ___   _ __   _   _  _ __
+;  | . ` | / _ \| __|\ \ /\ / / / _ \ | '__|| |/ /    |  __/  / _ \ | '_ \ | | | || '_ \
+;  | |\  ||  __/| |_  \ V  V / | (_) || |   |   <     | |    | (_) || |_) || |_| || |_) |
+;  \_| \_/ \___| \__|  \_/\_/   \___/ |_|   |_|\_\    \_|     \___/ | .__/  \__,_|| .__/
+;                                                                   | |           | |
+;
+
+(defpoll connection-info :interval "5s" "scripts/list-networks.sh")
+
+;; Availible connections ;;
+(defwidget netentrys []
+(box :class "netwidget" :space-evenly false
+  ;(back :windowname "network")
+  (box :orientation "v" :space-evenly true :class "connection-array"
+    (for connection in connection-info
+      (button :class "connect-btn" :onclick "nmcli dev wifi connect ${connection}"
+        (box :orientation "h" :space-evenly false
+          (label :yalign 0.95 :hexpand true :text connection) (label :text "")
+          )
+        )
+      )
+    )
+  )
+)
+
+(defwindow network
+  :monitor 0
+  :geometry (geometry :x "10px" :y "10px" :width "80px" :height "80px" :anchor "left bottom")
+  :stacking "fg"
+  :wm-ignore false
+  :windowtype "toolbar"
+(netentrys))
+
+
+
+;    _____         _                   _                  ______
+;   /  __ \       | |                 | |                 | ___ \
+;   | /  \/  __ _ | |  ___  _ __    __| |  __ _  _ __     | |_/ /  ___   _ __   _   _  _ __
+;   | |     / _` || | / _ \| '_ \  / _` | / _` || '__|    |  __/  / _ \ | '_ \ | | | || '_ \
+;   | \__/\| (_| || ||  __/| | | || (_| || (_| || |       | |    | (_) || |_) || |_| || |_) |
+;    \____/ \__,_||_| \___||_| |_| \__,_| \__,_||_|       \_|     \___/ | .__/  \__,_|| .__/
+;                                                                       | |           | |
+;                                                                       |_|           |_|
+
+;; Calendar Widgets ;;
+(defwidget cal []
+(box :class "cal-box"
+    :orientation "h"
+  (box :class "cal-inner-box"
+      :space-evenly false
+    ;(back :windowname "calendar")
+    (calendar :class "cal" :hexpand true
+        :day calendar_day
+        :month calendar_month
+        :year calendar_year))))
+(defpoll calendar_day :interval "10h"
+  "date '+%d'")
+(defpoll calendar_month :interval "10h"
+  "scripts/calendar")
+(defpoll calendar_year :interval "10h"
+  "date '+%Y'")
+
+;; Work in Progress ;;
+(defwidget events [] 
+  (box 
+    :class "event_container" :orientation "v"
+    (box
+      :class "event" :orientation "h"
+      (label :class "event_name")
+      (box :class "event_time_span" (label :class "event_start") (label :class "event_end"))
+      (label :class "event_location")
+    )
+  )
+)
+
+;; Calendar Windows ;;
+(defwindow calendar
+  :monitor 0
+  :geometry (geometry :x "10px"
+    :y "55px"
+    :width "300px"
+    :height "60px" :anchor "left bottom")
+(cal))
+
+
+;   ______                                  ___  ___
+;  | ___ \                                 |  \/  |
+;  | |_/ /  ___  __      __  ___  _ __     | .  . |  ___  _ __   _   _
+;  |  __/  / _ \ \ \ /\ / / / _ \| '__|    | |\/| | / _ \| '_ \ | | | |
+;  | |    | (_) | \ V  V / |  __/| |       | |  | ||  __/| | | || |_| |
+;  \_|     \___/   \_/\_/   \___||_|       \_|  |_/ \___||_| |_| \__,_|
+;
+
+;; Powerbuttons ;;
+(defwidget _buttons []
+(box :class "power-btns-box" :spacing 5
+    :vexpand true :hexpand true
+    :space-evenly true
+  (button :class "shutdown-btn" :onclick "scripts/popup.sh power | shutdown now" (label :class "shutdown-icon" :text ""))
+  (button :class "reboot-btn" :onclick "scripts/popup.sh power | reboot" (label :class "reboot-icon" :text ""))
+  (button :class "logout-btn" :onclick "scripts/popup.sh power | killall -9 Hyprland" (label :class "logout-icon" :text "󰍃"))))
+
+
+(defwindow power :monitor 0 :geometry (geometry :x "10px" :y "10px" :anchor "left bottom" :width "150px" :height "50px")(_buttons))
+
+
+;    _____         _        _        ___  ___
+;   |  _  |       (_)      | |       |  \/  |
+;   | | | | _   _  _   ___ | | __    | .  . |  ___  _ __   _   _
+;   | | | || | | || | / __|| |/ /    | |\/| | / _ \| '_ \ | | | |
+;   \ \/' /| |_| || || (__ |   <     | |  | ||  __/| | | || |_| |
+;    \_/\_\ \__,_||_| \___||_|\_\    \_|  |_/ \___||_| |_| \__,_|
+;
+;
+
+(defpoll upt :interval "60s" "uptime | awk '{print $3}'")
+(defwidget _greeter []
+  (box :class "greeter" :space-evenly false (box :class "profilepick") (box :space-evenly false :hexpand true :halign "fill" :orientation "v" (label :halign "center" :class "greeterclock" :text "${hour}:${min}") (label :class "uptime" :text "${upt} uptime")))
+)
+
+(defwidget _systctlbtn [onclick description icon tooltip toggle] 
+  (button :class "sysbtn" :tooltip "${tooltip}" :onclick { toggle == "t" ? "scripts/tooglebtn/" : "${onclick}" } 
+    (label :class "sysbtnicon" :text "${icon}" :xalign 0.4) 
+  )
+)
+
+;; Some System Buttons (WIP)
+(defwidget _sysctlbtngrid []
+  (box :class "_sysctlbtnvert" :orientation "v" 
+    (box :class "_sysctlbtnhori" :orientation "h" 
+    (_systctlbtn :onclick "$($($HOME/.config/globalscripts/changewallpaper.sh))" :description "" :icon "" :tooltip "change wallpaper" :toggle "n")
+    (_systctlbtn :onclick "$(grimblast copy screen)" :description "" :icon "󰹑" :tooltip "Take Screenshot" :toggle "n")
+    (_systctlbtn :onclick "swaync-client -t -sw" :description "" :icon "󰂚" :tooltip "Open Notification Center" :toggle "n")
+  )
+  
+  ; (box :class "_sysctlbtnhori" :orientation "h"
+  ;   (_systctlbtn :onclick "$($HOME/scripts/changewallpaper.sh)" :description "" :icon "a" :tooltip "change wallpaper" :toggle "n")
+  ;   (_systctlbtn :onclick "$($HOME/scripts/changewallpaper.sh)" :description "" :icon "a" :tooltip "change wallpaper" :toggle "n")
+  ;   (_systctlbtn :onclick "$($HOME/scripts/changewallpaper.sh)" :description "" :icon "a" :tooltip "change wallpaper" :toggle "n")
+  ; )
+  
+  ; (box :class "_sysctlbtnhori" :orientation "h"
+  ;   (_systctlbtn :onclick "$($HOME/scripts/changewallpaper.sh)" :description "" :icon "a" :tooltip "change wallpaper" :toggle "n")
+  ;   (_systctlbtn :onclick "$($HOME/scripts/changewallpaper.sh)" :description "" :icon "a" :tooltip "change wallpaper" :toggle "n")
+  ;   (_systctlbtn :onclick "$($HOME/scripts/changewallpaper.sh)" :description "" :icon "a" :tooltip "change wallpaper" :toggle "n")
+  ; )
+ )
+)
+
+;; Your favorite Apps ;;    Some apps need to be launched with gtk-launch espacially if they have start argumends in the .desktop file
+(defwidget _appbtngrid []
+  (box :class "_sysctlbtnvert" :orientation "v" 
+    (box :class "_sysctlbtnhori" :orientation "h" 
+    (_systctlbtn :onclick "gtk-launch firefox" :description "" :icon "" :tooltip "Firefox" :toggle "n")
+    (_systctlbtn :onclick "$(dolphin) & " :description "" :icon "" :tooltip "File Explorer" :toggle "n")
+    (_systctlbtn :onclick "gtk-launch kitty" :description "" :icon "" :tooltip "Terminal" :toggle "n")
+  )
+  
+  (box :class "_sysctlbtnhori" :orientation "h"
+    (_systctlbtn :onclick "$(libreoffice)" :description "" :icon "󰈙" :tooltip "Office" :toggle "n")
+    (_systctlbtn :onclick "gtk-launch discord" :description "" :icon "󰙯" :tooltip "Discord" :toggle "n")
+    (_systctlbtn :onclick "gtk-launch whatsdesk" :description "" :icon "" :tooltip "Whatsapp" :toggle "n")
+  )
+  
+  (box :class "_sysctlbtnhori" :orientation "h"
+    (_systctlbtn :onclick "gtk-launch vscodium" :description "" :icon "󰨞" :tooltip "VSCode" :toggle "n")
+    (_systctlbtn :onclick "gtk-launch blender" :description "" :icon "󰂫" :tooltip "Blender" :toggle "n")
+    (_systctlbtn :onclick "gtk-launch kdenlive" :description "" :icon "" :tooltip "Video Editing" :toggle "n")
+  )
+ )
+)
+
+;; System Info Bar'S ;;
+(defwidget _sysinfo []
+  (box :class "systeminfowrapper" :orientation "v"
+    (box :space-evenly false (label :class "baricon" :text "󰁹") (progress :hexpand true :class "batbar" :orientation "h" :value "${EWW_BATTERY.BAT0.capacity}"))
+    (box :space-evenly false (label :class "baricon" :text "") (progress :hexpand true :class "rambar" :orientation "h" :value "${EWW_RAM.used_mem_perc}"))
+    (box :space-evenly false (label :class "baricon" :text "") (progress :hexpand true :class "cpubar" :orientation "h" :value "${EWW_CPU.avg}"))
+    (box :space-evenly false (label :class "baricon" :text "") (progress :hexpand true :class "diskbar" :orientation "h" :value "${EWW_DISK["/"].used_perc}"))
+  )
+)
+
+;; QUICK Menu ;;
+(defwindow quickmenu :monitor 0 :geometry (geometry :x "10px" :y "10px" :anchor "left top" :width "150px" :height "50px")
+  (box :space-evenly false :orientation "v" (_greeter) (_appbtngrid) (_sysinfo) (_sysctlbtngrid))
+)
