@@ -62,3 +62,8 @@ Current=sugar-candy
     	![](.config/assets/3.png)
 
 ###
+
+<h3>FAQ</h3>
+
+<p>F: Why is it called Aurora</p>
+<p>A: Starfield drug (don't ask)</p>
