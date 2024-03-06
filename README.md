@@ -49,7 +49,7 @@
 
 ###
 
-<p align="left">The dotfiles are a mess :D.<br>The code makes no sense and is poorly documented.<br> Also everything is solved in a rather cumbersome way so expect some things to change at some point.<br> Don't expect too much, I don't have much time</p>
+<p align="left">The dotfiles are a mess :D.<br>The code makes no sense and is poorly documented.<br> Also everything is solved in a rather cumbersome way so expect some things to change at some point.<br> Don't expect too much, I don't have much time.<br>Ah and some things don't work.</p>
 
 ## Showcase Section
 -
