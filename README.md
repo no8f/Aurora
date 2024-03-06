@@ -45,6 +45,8 @@
 in the /usr/share/sddm/themes folder. And edit the /etc/sddm.conf file to include: <br>
 [Theme]<br>
 Current=sugar-candy
+
+<p>Put the chrome folder inside .config/firefoxcss in the $HOME/.mozilla/firefox/<some-mane>.default-release/ folder. And google how to activate firefox userChrome.css</p>
 <p><br> And put the Rest of the .config folder in your own .config folder.</p>
 
 ###
