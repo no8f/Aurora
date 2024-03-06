@@ -41,7 +41,7 @@
 
 ###
 
-<p> align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br> The Wallpaper folder in your 'Pictures' Folder.<br> The contents of .config/sddm folder 
+<p align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br> The Wallpaper folder in your 'Pictures' Folder.<br> The contents of .config/sddm folder 
 in the /usr/share/sddm/themes folder. And edit the /etc/sddm.conf file to include: <br>
 [Theme]<br>
 Current=sugar-candy
