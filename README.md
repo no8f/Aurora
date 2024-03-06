@@ -25,7 +25,7 @@
 
 ###
 
-<p align="left">- Hyprland  > v0.36<br>- Rofi (wayland fork)<br>- Hyprlock<br>- Hypridle<br>- Elkowears weacky widgets<br>- Swww<br>- Kitty<br>- SDDM<br>- Firefox<br>- Kvantum<br>- qt6ct/qt5ct<br>- gtk-look<br>- Network Manager<br>- Blueman<br>- swaync</p>
+<p align="left">- Hyprland  > v0.36<br>- Rofi (wayland fork)<br>- Hyprlock<br>- Hypridle<br>- Elkowears weacky widgets<br>- Swww<br>- Kitty<br>- SDDM<br>- Firefox<br>- Kvantum<br>- qt6ct/qt5ct<br>- Network Manager<br>- Blueman<br>- swaync</p>
 
 ###
 
@@ -41,7 +41,11 @@
 
 ###
 
-<p align="left">Working on Automated installation... Currently you can just copy the folders :)</p>
+<p> align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br> The Wallpaper folder in your 'Pictures' Folder.<br> The contents of .config/sddm folder 
+in the /usr/share/sddm/themes folder. And edit the /etc/sddm.conf file to include: <br>
+[Theme]<br>
+Current=sugar-candy
+<p><br> And put the Rest of the .config folder in your own .config folder.</p>
 
 ###
 
