@@ -41,7 +41,8 @@
 
 ###
 
-<p align="left">Working on Automated installation... Currently you can just copy the folders :)</p>
+<p align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br> The Wallpaper folder in the Pictures Folder.<br> The contents of .config/sddm folder 
+in the /usr/share/sddm/themes folder.<br> And the Rest of the .config folder in your own .config folder.</p>
 
 ###
 
