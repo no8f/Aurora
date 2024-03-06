@@ -25,7 +25,7 @@
 
 ###
 
-<p align="left">- Hyprland  > v0.36<br>- Rofi (wayland fork)<br>- Hyprlock<br>- Hypridle<br>- Elkowears weacky widgets<br>- Swww<br>- Kitty<br>- SDDM<br>- Firefox<br>- Kvantum<br>- qt6ct/qt5ct<br>- gtk-look<br>- Network Manager<br>- Blueman<br>- swaync</p>
+<p align="left">- Hyprland  > v0.36<br>- Rofi (wayland fork)<br>- Hyprlock<br>- Hypridle<br>- Elkowears weacky widgets<br>- Swww<br>- Kitty<br>- SDDM<br>- Firefox<br>- Kvantum<br>- qt6ct/qt5ct<br>- Network Manager<br>- Blueman<br>- swaync</p>
 
 ###
 
