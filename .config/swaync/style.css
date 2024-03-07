@@ -1,9 +1,9 @@
-@define-color primary-color #B3B3A9;
+@define-color primary-color #56758C;
 
 * {
   all: unset;
   font-size: 14px;
-  font-family: "Ubuntu Nerd Font";
+  font-family: "JetBrains Mono Nerd Font 10";
   transition: 200ms;
 }
 
@@ -212,7 +212,8 @@
 progressbar,
 progress,
 trough {
-  border-radius: 12.6px;
+  border-radius: 7px;
+  min-height: 15px;
 }
 
 progressbar {
@@ -225,7 +226,7 @@ progressbar {
 
 .notification.low progress,
 .notification.normal progress {
-  background-color: #8aadf4;
+  background-color: @primary-color;
 }
 
 trough {

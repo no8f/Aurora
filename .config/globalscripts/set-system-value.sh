@@ -15,14 +15,12 @@ fi
 # Set brightness or volume based on the first argument
 if [ "$1" == "brightness" ]; then
     brightnessctl set $2
-    CURRENT_BRIGHTNESS=$(brightnessctl g)
-    CURRENT_BRIGHTNESS=${( bc -l <<< 'CURRENT_BRIGHTNESS / 255 * 100' )}
-    CURRENT_BRIGHTNESS=${CURRENT_BRIGHTNESS%%.*}
-    echo $CURRENT_BRIGHTNESS
-    dunstify -r 12 --icon=$HOME/.icons/Fluent/32/status/weather-clear.svg -h int:value:$CURRENT_BRIGHTNESS "Brightness"
+    CURRENT_BRIGHTNESS=$(brightnessctl -m | cut -d, -f4 | sed 's/%//')
+    notify-send -t 800 -e -h string:x-canonical-private-synchronous:brightness_notif -h int:value:$CURRENT_BRIGHTNESS -i $HOME/.icons/Fluent/32/status/weather-clear.svg "$CURRENT_BRIGHTNESS"  
 
 elif [ "$1" == "volume" ]; then
     amixer -D pulse sset Master $2
-    notify-send -i /home/nof/.icons/Fluent/scalable/apps/volume-knob.svg -h int:value:60 "Volume"
+    CURRENT_VOLUME=$(amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]%')
+    notify-send -t 800 -e -h string:x-canonical-private-synchronous:brightness_notif -h int:value:$CURRENT_VOLUME -i $HOME/.icons/Fluent/scalable/apps/applications-multimedia.svg ""  
 fi
 
