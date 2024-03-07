@@ -51,7 +51,7 @@
 
 Working on Automated installation... Currently you can just copy the folders :)
 
-Clone this repo in a appropiate directory (maybe make a speperate folder for clones)
+Clone this repo in a appropiate directory (maybe make a speperate directory for clones)
 ```
 git clone https://github.com/no8f/Aurora.git
 ```
