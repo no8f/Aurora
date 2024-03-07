@@ -13,11 +13,8 @@
 
 ###
 
-<h3 align="left">🛠  Attantion</h3>
-
-###
-
-<p align="left">This Rice is intended for personal use. It is currently at a very early stage of development. So use it at your own risk.</p>
+>[!Note]
+>This Rice is intended for personal use. It is currently at a very early stage of development. So use it at your own risk.
 
 ###
 
@@ -25,15 +22,26 @@
 
 ###
 
-<p align="left">- Hyprland  > v0.36<br>- Rofi (wayland fork)<br>- Hyprlock<br>- Hypridle<br>- Elkowears weacky widgets<br>- Swww<br>- Kitty<br>- SDDM<br>- Firefox<br>- Kvantum<br>- qt6ct/qt5ct<br>- Network Manager<br>- Blueman<br>- swaync</p>
+- Hyprland  > v0.36
+- Rofi (wayland fork)
+- Hyprlock
+- Hypridle
+- Elkowears weacky widgets
+- Swww
+- Kitty
+- SDDM
+- Firefox
+- Kvantum
+- qt6ct/qt5ct
+- Network Manager
+- swaync
+- FiraCode Nerd Font
+- Better Discord (optional)
+- Amixer
+- Brightnessctl
 
 ###
 
-<h2 align="left">Needed small cattle :3</h2>
-
-###
-
-<p align="left">- FiraCode Nerd Font<br>- Better Discord<br>- Amixer<br>- Brightnessctl<br>- bc<br>- ZSH Shell<br>- Oh My ZSH Plugin</p>
 
 ###
 
@@ -41,21 +49,40 @@
 
 ###
 
-<p align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br>Copy the Wallpaper folder in your 'Pictures' Folder,<br> The contents of .config/sddm folder 
-in the /usr/share/sddm/themes folder, and edit the /etc/sddm.conf file to include: <br>
-[Theme]<br>
-Current=sugar-candy
+<p align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br>Copy the Wallpaper folder in your 'Pictures' directory,<br> The contents of .config/sddm folder 
+in the /usr/share/sddm/themes directory, and edit the /etc/sddm.conf file to include: <br></p>
 
-<p>Put the chrome folder inside .config/firefoxcss in the $HOME/.mozilla/firefox/<some-mane>.default-release/ folder. And google how to activate firefox userChrome.css</p>
-<p><br> And put the Rest of the .config folder in your own .config folder.</p>
+```
+[Theme]
+Current=sugar-candy
+```
+
+>[!Note]
+>Please check if you have all dependecies for the theme
+
+Open kvantum and install the folder .config/kvantum/MonochromeSolid. (it's a modiefied theme to work well with the rest of the desktop.)<br>
+In the qt6ct/qt5ct change the style to kvantum.
+
+For the GTK Theme you can use whatever you want (I use Andromeda theme), install it wit nwg-looks.
+
+<p>Put the chrome folder from .config/firefoxcss in the $HOME/.mozilla/firefox/<some-mane>.default-release/ directory And google how to activate firefox userChrome.css</p>
+<p>And put the Rest of the .config folder in your own .config directory<br></p>
+Now restart.
 
 ###
 
 <h2 align="left">Config Files</h2>
 
 ###
+>[!Warning]
+>The dotfiles are a mess :D.<br>Don't expect too much, I don't have much time.<br>Ah and some things don't work.
 
-<p align="left">The dotfiles are a mess :D.<br>The code makes no sense and is poorly documented.<br> Also everything is solved in a rather cumbersome way so expect some things to change at some point.<br> Don't expect too much, I don't have much time.<br>Ah and some things don't work.</p>
+- The startup apps are located in .config/globalscripts/start.sh You can just append your own.
+- The keybindings to open apps are in .config/hypr/hyprland.conf
+>[!Note]
+>To launch a app press WIN+R to open rofi or just press WIN key to open the side panel where some favorite apps are located.
+- To add a new Wallpaper put a .png in Pictures/Wallpapers and in the side panel press the image icon to cicle through the Wallpapers.  
+
 
 ## Showcase Section
 -
