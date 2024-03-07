@@ -64,7 +64,7 @@ git clone https://github.com/no8f/Aurora.git
 Current=sugar-candy
 ```
 
->[!Note]
+>[!IMPORTANT]
 >Please check if you have all dependecies for the theme
 
 3. Copy the chrome folder from .config/firefoxcss in the $HOME/.mozilla/firefox/<some-mane>.default-release/ directory and activate firefox userChrome.css
@@ -84,10 +84,14 @@ Current=sugar-candy
 
 - The startup apps are located in .config/globalscripts/start.sh You can just append your own.
 - The keybindings to open apps are in .config/hypr/hyprland.conf
->[!Note]
+>[!TIP]
 >To launch a app press WIN+R to open rofi or just press WIN key to open the side panel where some favorite apps are located.
 - To add a new Wallpaper put a .png in Pictures/Wallpapers and in the side panel press the image icon to cicle through the Wallpapers.  
+<br>
+<br>
 
+>[!NOTE]
+>If there's something you don't like or you have something to criticise open an issue, I will make improvements if possible but I will not handle pull requests.
 
 ## Showcase Section
 -
