@@ -49,8 +49,15 @@
 
 ###
 
-<p align="left">Working on Automated installation... Currently you can just copy the folders :)<br><br>Copy the Wallpaper folder in your 'Pictures' directory,<br> The contents of .config/sddm folder 
-in the /usr/share/sddm/themes directory, and edit the /etc/sddm.conf file to include: <br></p>
+Working on Automated installation... Currently you can just copy the folders :)
+
+Clone this repo in a appropiate directory (maybe make a speperate folder for clones)
+```
+git clone https://github.com/no8f/Aurora.git
+```
+
+Copy the Wallpaper folder in your 'Pictures' directory,<br> The contents of .config/sddm folder 
+in the /usr/share/sddm/themes directory, and edit the /etc/sddm.conf file to include: <br>
 
 ```
 [Theme]
