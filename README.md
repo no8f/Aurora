@@ -14,7 +14,7 @@
 ###
 
 >[!Note]
->This Rice is intended for personal use. It is currently at a very early stage of development. So use it at your own risk.
+>This Rice is intended for personal use. It is currently at a very early stage of development. Use it only when you know what you're doing.
 
 ###
 
@@ -26,7 +26,7 @@
 - Rofi (wayland fork)
 - Hyprlock
 - Hypridle
-- Elkowears weacky widgets
+- Elkowars weacky widgets
 - Swww
 - Kitty
 - SDDM
@@ -34,7 +34,7 @@
 - Kvantum
 - qt6ct/qt5ct
 - Network Manager
-- swaync
+- Swaync
 - FiraCode Nerd Font
 - Better Discord (optional)
 - Amixer
@@ -56,8 +56,8 @@ Clone this repo in a appropiate directory (maybe make a speperate directory for 
 git clone https://github.com/no8f/Aurora.git
 ```
 
-Copy the Wallpaper folder in your 'Pictures' directory,<br> The contents of .config/sddm folder 
-in the /usr/share/sddm/themes directory, and edit the /etc/sddm.conf file to include: <br>
+1. Copy the Wallpaper folder in your 'Pictures' directory
+2. Copy the contents of .config/sddm folder in the /usr/share/sddm/themes directory, and edit the /etc/sddm.conf file to include: <br>
 
 ```
 [Theme]
@@ -67,14 +67,12 @@ Current=sugar-candy
 >[!Note]
 >Please check if you have all dependecies for the theme
 
-Open kvantum and install the folder .config/kvantum/MonochromeSolid. (it's a modiefied theme to work well with the rest of the desktop.)<br>
-In the qt6ct/qt5ct change the style to kvantum.
-
-For the GTK Theme you can use whatever you want (I use Andromeda theme), install it wit nwg-looks.
-
-<p>Put the chrome folder from .config/firefoxcss in the $HOME/.mozilla/firefox/<some-mane>.default-release/ directory And google how to activate firefox userChrome.css</p>
-<p>And put the Rest of the .config folder in your own .config directory<br></p>
-Now restart.
+3. Copy the chrome folder from .config/firefoxcss in the $HOME/.mozilla/firefox/<some-mane>.default-release/ directory and activate firefox userChrome.css
+4. Copy the Rest of the .config folder in your own .config directory
+5. Open kvantum and install the folder .config/kvantum/MonochromeSolid. (it's a modiefied theme to work well with the rest of the desktop.)<br>
+6. In the qt6ct/qt5ct change the style to kvantum.
+7. For the GTK Theme you can use whatever you want (I use Andromeda), install it with nwg-looks.
+8. Reboot.
 
 ###
 
