@@ -10,7 +10,7 @@ if [ ! -d "$PICTURE_FOLDER" ]; then
 fi
 
 # Get the list of picture files in the folder
-PICTURE_FILES=("$PICTURE_FOLDER"/*)
+PICTURE_FILES=("$PICTURE_FOLDER"/*.png)
 
 # Check if there are any picture files
 if [ ${#PICTURE_FILES[@]} -eq 0 ]; then

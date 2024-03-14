@@ -76,7 +76,7 @@
     (button   :onclick "scripts/popup audio"   :class "volume-icon"
       {current-volume > 70 ? "󰕾" :
           current-volume > 30 ? "󰖀" :
-          current-volume > 10 ? "󰕿" : "󰸈"}))))
+          current-volume > 0 ? "󰕿" : "󰸈"}))))
 (defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defvar volum false)
 
@@ -96,6 +96,7 @@
     (for workspace in workspaces
       (button :onclick "hyprctl dispatch workspace ${workspace.id}"
           :class "workspace ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+          (label :text "${workspace.id}")
         )
       )
     )
@@ -170,7 +171,7 @@
   :monitor 0
   :geometry (geometry :x "10px"
     :y "0%"
-    :width "35px"
+    :width "40px"
     :height "100%"
     :anchor "left center")
   :stacking "fg"
