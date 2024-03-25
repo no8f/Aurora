@@ -247,14 +247,14 @@
   "date '+%Y'")
 
 ;; Work in Progress ;;
+(defpoll events_today :interval "5h" :initial "scripts/calender.sh" "scripts/calender.sh")
 (defwidget events [] 
   (box 
     :class "event_container" :orientation "v"
-    (box
-      :class "event" :orientation "h"
-      (label :class "event_name")
-      (box :class "event_time_span" (label :class "event_start") (label :class "event_end"))
-      (label :class "event_location")
+    (for event in events_today
+      (box :class "event" :orientation "h" :space-evenly false
+        (label :class "event_name" :text "${event}")
+      )
     )
   )
 )
@@ -266,7 +266,7 @@
     :y "55px"
     :width "300px"
     :height "60px" :anchor "left bottom")
-(cal))
+(box :orientation "h" (cal) (events)))
 
 
 ;   ______                                  ___  ___

@@ -1,4 +1,4 @@
-@define-color primary-color #B6BDC2;
+@define-color primary-color #A9A9A9;
 
 * { all: unset;    font-family: "Font Awesome 6 Pro"; }
 
@@ -329,3 +329,14 @@ tooltip label {
   min-height: 12px;
 }
 
+.event_container {
+  margin-left: 10px;
+  background-color: #0F0F11;
+  border: solid 2px @primary-color;
+  border-radius: 4px;
+}
+
+.event {
+  margin: 10px;
+  background-color: #89B4FA;
+}

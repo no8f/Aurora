@@ -29,7 +29,7 @@ FS=":"
     time[1] = sprintf("%02d", (time[1] + 1) % 24)
     start_time = time[1] ":" time[2]
     start_found=1
-    printf "Start: %s|", start_time
+    printf "$Start; %s|", start_time
   }
   if ($1 == "DTEND" && start_found) {
     end_time=substr($2, 10, 2) ":" substr($2, 12, 2)
@@ -38,18 +38,17 @@ FS=":"
     time[1] = sprintf("%02d", (time[1] + 1) % 24)
     end_time = time[1] ":" time[2]
 
-    printf "End: %s|", end_time
+    printf "End; %s|", end_time
   }
   if ($1 == "SUMMARY" && start_found) {
-    printf "Termin: %s|", $2
+    printf "Termin; %s|", $2
   }
   if ($1 == "LOCATION" && start_found) {
-    printf "Ort: %s| ", $2
+    printf "Ort; %s| ", $2
     start_found=0
   }
 }
-' "$TEMP_FILE" )
-# | jq -R -s 'split("|")[:-1]')
+' "$TEMP_FILE" | jq -R 'split("|") | map(split(";") | {(.[0]): .[1]})')
 
 echo $TODAYS_EVENST
 
